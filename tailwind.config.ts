@@ -6,7 +6,21 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
+    colors: {
+      background: "var(--background)",
+      foreground: "var(--foreground)",
+      primary: "var(--primary)",
+      secondary: "var(--secondary)",
+      accent: "var(--accent)",
+      neutral: "var(--neutral)",
+      "base-100": "var(--base-100)",
+      info: "var(--info)",
+      success: "var(--success)",
+      warning: "var(--warning)",
+      error: "var(--error)",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
