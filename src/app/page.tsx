@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+
 import Link from 'next/link'
 import {
   mySocials as socials,
@@ -13,18 +14,21 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from './_components/ui/tooltip'
+import { Header } from './_components/header'
 
 export default function Home() {
   return (
     <>
       <main className="md:max-w-2xl mx-auto px-8">
-        <div className="my-20">
+        <Header />
+        <div className="w-full">
+          <div className="w-1/12 rounded my-2 bg-info h-px"></div>
           <Heading level={1}>Welcome to breno.me</Heading>
           <section className="space-y-3 my-6">
             <div className="space-y-3">
               <Paragraph>
-                <span className="text-2xl">H</span>ello, i am Breno Vieira, a{' '}
-                <Strong>web developer</Strong>. I started to learn web
+                <span className="text-3xl mr-1">H</span>ello, i am Breno Vieira,
+                a <Strong>web developer</Strong>. I started to learn web
                 development at 2021 in my free time due to pandemic and my love
                 for technology and computers, since then i have been building
                 web applications for fun and facilitate my tasks.
