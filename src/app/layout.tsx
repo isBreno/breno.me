@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./styles/globals.css";
+import { font } from "./styles/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={font.display.style}>
       <body>{children}</body>
     </html>
   );
