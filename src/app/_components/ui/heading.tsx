@@ -1,10 +1,14 @@
+import { cn } from '@/lib/utils'
+import type React from 'react'
+
 interface HeadingProps {
   children: React.ReactNode
   level: 1 | 2 | 3 | 4 | 5 | 6
+  className?: string
 }
 
-export const Heading = ({ children, level }: HeadingProps) => {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements
+export const Heading = ({ children, className, level }: HeadingProps) => {
+  const Tag = `h${level}` as keyof React.JSX.IntrinsicElements
   const size = {
     h1: 'text-4xl',
     h2: 'text-3xl',
@@ -14,5 +18,11 @@ export const Heading = ({ children, level }: HeadingProps) => {
     h6: 'text-base',
   }
 
-  return <Tag className={size[`h${level}`] + ' font-bold'}>{children}</Tag>
+  return (
+    <Tag
+      className={cn(size[`h${level}`], 'font-bold text-highlight', className)}
+    >
+      {children}
+    </Tag>
+  )
 }
