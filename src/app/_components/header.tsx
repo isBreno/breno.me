@@ -30,7 +30,7 @@ export const Header = () => (
           <li key={link.href}>
             <Link
               href={link.href}
-              target="_blank"
+              target={link.href.startsWith('http') ? '_blank' : '_self'}
               className="text-foreground hover:text-highlight transition-colors"
             >
               {link.content}
@@ -46,19 +46,23 @@ export const Header = () => (
         </SheetTrigger>
 
         <SheetContent className="w-full sm:hidden">
-          <ul className="space-y-4">
+          <ul className="w-full my-4">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} className="w-full">
                 <Link
                   href={link.href}
-                  target="_blank"
-                  className="text-foreground hover:text-highlight transition-colors"
+                  target={link.href.startsWith('http') ? '_blank' : '_self'}
+                  className="text-foreground hover:bg-accent py-2 px-1 rounded text-center flex items-center justify-center transition-colors w-full"
                 >
                   {link.content}
                 </Link>
               </li>
             ))}
-            <Moon className={iconClass} />
+            <li className="w-full flex items-center justify-center">
+              <button className="text-foreground hover:bg-accent py-2 px-1 rounded text-center flex items-center justify-center transition-colors w-full">
+                <Moon className={iconClass} />
+              </button>
+            </li>
           </ul>
         </SheetContent>
       </Sheet>

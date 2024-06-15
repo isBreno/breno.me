@@ -27,11 +27,11 @@ export default function Home() {
           <section className="space-y-3 my-6">
             <div className="space-y-3">
               <Paragraph>
-                <span className="text-3xl mr-1">H</span>ello, i am Breno Vieira,
-                a <Strong>web developer</Strong>. I started to learn web
-                development at 2021 in my free time due to pandemic and my love
-                for technology and computers, since then i have been building
-                web applications for fun and facilitate my tasks.
+                Hello, i am Breno Vieira, a <Strong>web developer</Strong>. I
+                started to learn web development at 2021 in my free time due to
+                pandemic and my love for technology and computers, since then i
+                have been building web applications for fun and facilitate my
+                tasks.
               </Paragraph>
 
               <Paragraph>
