@@ -19,8 +19,10 @@ import { Header } from './_components/header'
 export default function Home() {
   return (
     <>
-      <main className="md:max-w-2xl mx-auto px-8">
+      <div className="px-6">
         <Header />
+      </div>
+      <main className="md:max-w-2xl mx-auto px-8">
         <div className="w-full">
           <div className="w-1/12 rounded my-2 bg-info h-px"></div>
           <Heading level={1}>Welcome to breno.me</Heading>
