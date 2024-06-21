@@ -20,6 +20,7 @@ const config: Config = {
       success: "var(--success)",
       warning: "var(--warning)",
       error: "var(--error)",
+      muted: "var(--muted)",
     },
     extend: {
       backgroundImage: {
