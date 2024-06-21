@@ -1,113 +1,231 @@
-import Image from "next/image";
+<<<<<<< HEAD
+import { Command, Notebook, NotepadText, Projector } from "lucide-react";
+import Link from "next/link";
+import { socials } from '@/app/variables'
+=======
+'use client'
 
-export default function Home() {
+import Link from 'next/link'
+import {
+  mySocials as socials,
+  myTechnologies as technologies,
+} from '@/variables'
+import { Strong } from './_components/ui/strong'
+import { Heading } from './_components/ui/heading'
+import { Paragraph } from './_components/ui/paragraph'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './_components/ui/tooltip'
+import { Header } from './_components/header'
+>>>>>>> 351d5497819b1cf61a92f204b563b05e94a516df
+
+const technologies = ["TailwindCSS", "Typescript", "Vite", "Testing", "Databases", "Git", "NodeJS"]
+
+export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+<<<<<<< HEAD
+    <div>
+      <header className="py-3 px-3 w-full">
+        <nav className="flex justify-between max-w-4xl mx-auto gap-3 items-center">
+          <Link href="/">
+            <Command />
+          </Link>
+
+          <ul className="flex gap-3 items-center">
+            <li>
+              <Link
+                className="flex gap-1 items-center text-sm text-muted hover:text-foreground transition-colors font-medium"
+                href="/"
+              >
+                <NotepadText size={14} /> Sobre
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className="flex gap-1 items-center text-sm text-muted hover:text-foreground transition-colors font-medium"
+                href="/projects"
+              >
+                <Projector size={14} /> Projetos
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="flex gap-1 items-center text-sm text-muted hover:text-foreground transition-colors font-medium"
+                href="/blog"
+              >
+                <Notebook size={14} /> Blog
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+
+      <div className="my-6 px-3 max-w-3xl mx-auto">
+        <span className="text-muted text-sm leading-tigh">Hello, i am</span>
+        <h3 className="text-3xl font-bold leading-relaxed">Breno Vieira</h3>
+
+        <p className="leading-relaxed">
+          Hi there, I'm Breno Vieira, a web developer. I started diving into web development back in 2021 during the pandemic out of my deep interest in technology and computers. Since then, I've been happily building web applications for both leisure and to make my daily tasks easier. Now, I'm eager to leverage my skills for a career and actively seeking opportunities.
+
+            <br /> <br />
+          Let me share a bit more about myself. I'm Breno Vieira, 18 years old, based in Rio de Janeiro, Brazil. When I'm not coding, you'll find me gaming with friends or catching up on my favorite anime series.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+
+        <div className="space-y-4 mt-4">
+          <div className="space-y-3">
+            <h4 className='text-2xl font-bold'>Experiences</h4>
+            <p>Currently i don't have any professional experience in web development. But i have been working with some technologies in my personal projects to adquire some knowledge, i got a lot of experience with: {technologies.join(", ").split("").map(tech => <strong key={tech} className="font-bold text-highlight">{tech}</strong>)} and much more...</p>
+          </div>
+
+          <div className="space-y-3">
+            <h4 className='text-2xl font-bold'>Socials</h4>
+            <p> Connect with me on{' '}
+=======
+    <>
+      <div className="px-6">
+        <Header />
+      </div>
+      <main className="md:max-w-2xl mx-auto px-8">
+        <div className="w-full">
+          <div className="w-1/12 rounded my-2 bg-info h-px"></div>
+          <Heading level={1}>Welcome to breno.me</Heading>
+          <section className="space-y-3 my-6">
+            <div className="space-y-3">
+              <Paragraph>
+                Hello, i am Breno Vieira, a <Strong>web developer</Strong>. I
+                started to learn web development at 2021 in my free time due to
+                pandemic and my love for technology and computers, since then i
+                have been building web applications for fun and facilitate my
+                tasks.
+              </Paragraph>
+
+              <Paragraph>
+                Now i want to use these knowledge to my future, and for that i
+                am looking for a job.
+              </Paragraph>
+
+              <Paragraph>
+                Let me introduce myself better. My name is Breno Vieira, i am 18
+                years old, i live at Rio de Janeiro, Brazil. I like to code and
+                play games with my friends, sometimes i watch some animes too.
+              </Paragraph>
+            </div>
+          </section>
+
+          <section className="space-y-3 my-6">
+            <Heading level={3}>Experiences</Heading>
+
+            <div>
+              <Paragraph>
+                Currently{' '}
+                <Strong>
+                  i don&apos;t have any professional experience in web
+                  development
+                </Strong>
+                . But i have been working with some technologies in my personal
+                projects to adquire some knowledge, i got a lot of experience
+                with:{' '}
+                {technologies.map(({ name, url, description }, index) => (
+                  <>
+                    {index === 0 ? '' : ', '}
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <Link
+                            className="underline inline underline-[#f7ab0a] rounded font-medium"
+                            key={name}
+                            href={url}
+                            target="_blank"
+                          >
+                            {name}
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent className="text-sm bg-info px-2 py-1 rounded">
+                          {description}
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </>
+                ))}{' '}
+                and much more.
+              </Paragraph>
+            </div>
+          </section>
+
+          <section className="space-y-3 my-6">
+            <Heading level={3}>Socials</Heading>
+
+            <div>
+              <Paragraph>
+                Connect with me on{' '}
+>>>>>>> 351d5497819b1cf61a92f204b563b05e94a516df
+                {socials.map(({ name, url }, index) => (
+                  <>
+                    {index === 0 ? '' : ', '}
+                    <Link
+                      className="underline inline underline-[#f7ab0a] rounded font-medium"
+                      key={name}
+                      href={url}
+                      target="_blank"
+                    >
+                      {name}
+                    </Link>
+                  </>
+                ))}
+<<<<<<< HEAD
+                <br />
+            </p>
+                <p>You can also contact me at   <Link
+=======
+              </Paragraph>
+
+              <Paragraph>
+                You can also contact me by email at{' '}
+                <Link
+>>>>>>> 351d5497819b1cf61a92f204b563b05e94a516df
+                  className="underline inline underline-[#f7ab0a] rounded font-medium"
+                  href="mailto:eusoubrenovieira@gmail.com"
+                >
+                  eusoubrenovieira@gmail.com
+<<<<<<< HEAD
+                </Link></p>
+          </div>
         </div>
+
+        <span className="block w-fit mx-auto my-8 text-muted text-sm">
+          © breno.me
+        </span>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
+=======
+                </Link>
+                .
+              </Paragraph>
+            </div>
+          </section>
+
+          <section>
+            <Heading level={3}>Thank you for visiting</Heading>
+
+            <Paragraph>
+              Have a nice day! You can also check my blog and projects by
+              clicking on the links in the navigation bar.{' '}
+            </Paragraph>
+          </section>
+
+          <span className="text-center mt-16 block text-muted">
+            © 2024 breno.me
+          </span>
+        </div>
+      </main>
+    </>
+  )
+>>>>>>> 351d5497819b1cf61a92f204b563b05e94a516df
 }
