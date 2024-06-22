@@ -1,6 +1,6 @@
-import { Header } from '@/app/_components/header'
-import { Heading } from '@/app/_components/ui/heading'
-import { getPostBySlug } from '@/app/data/posts'
+import { Header } from '@/_components/header'
+import { Heading } from '@/_components/ui/heading'
+import { getPostBySlug } from '@/data/posts'
 import Link from 'next/link'
 
 interface Params {

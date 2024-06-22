@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
-import "./styles/globals.css";
-import { font } from "./font";
-
+import type { Metadata } from 'next'
+import './styles/globals.css'
+import { font } from './styles/font'
 
 export const metadata: Metadata = {
   title: {

@@ -1,5 +1,6 @@
-import { Header } from '../_components/header'
-import { Heading } from '../_components/ui/heading'
+'use client'
+import { Header } from '../../_components/header'
+import { Heading } from '../../_components/ui/heading'
 import { ProjectCard } from './components/project-card'
 
 const mockProjects = [
