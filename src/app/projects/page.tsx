@@ -24,10 +24,10 @@ const mockProjects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="px-6">
+    <div className="">
       <Header />
 
-      <section>
+      <section className="px-3 my-5">
         <div className="mx-auto w-fit">
           <Heading level={1} className="text-center">
             Projects

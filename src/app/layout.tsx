@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 import type { Metadata } from "next";
-import "./globals.css";
+import "./styles/globals.css";
 import { font } from "./font";
 
-=======
-import type { Metadata } from 'next'
-import './styles/globals.css'
-import { font } from './styles/fonts'
->>>>>>> 351d5497819b1cf61a92f204b563b05e94a516df
 
 export const metadata: Metadata = {
   title: {
@@ -41,11 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-<<<<<<< HEAD
     <html lang="en" className="dark" style={font.style}>
-=======
-    <html lang="en" className="dark" style={font.display.style}>
->>>>>>> 351d5497819b1cf61a92f204b563b05e94a516df
       <body>{children}</body>
     </html>
   )
