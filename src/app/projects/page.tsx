@@ -1,5 +1,6 @@
-import { Header } from '../_components/header'
-import { Heading } from '../_components/ui/heading'
+'use client'
+import { Header } from '../../_components/header'
+import { Heading } from '../../_components/ui/heading'
 import { ProjectCard } from './components/project-card'
 
 const mockProjects = [
@@ -24,10 +25,10 @@ const mockProjects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="px-6">
+    <div className="">
       <Header />
 
-      <section>
+      <section className="px-3 my-5">
         <div className="mx-auto w-fit">
           <Heading level={1} className="text-center">
             Projects

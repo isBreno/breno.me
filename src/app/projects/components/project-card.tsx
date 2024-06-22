@@ -4,9 +4,9 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/app/_components/ui/carousel'
-import { Heading } from '@/app/_components/ui/heading'
-import { Paragraph } from '@/app/_components/ui/paragraph'
+} from '@/_components/ui/carousel'
+import { Heading } from '@/_components/ui/heading'
+import { Paragraph } from '@/_components/ui/paragraph'
 import { cn } from '@/lib/utils'
 import { SiGithub } from '@icons-pack/react-simple-icons'
 import { Link2 } from 'lucide-react'

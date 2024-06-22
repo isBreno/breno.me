@@ -1,7 +1,7 @@
-import { Header } from '../_components/header'
-import { Heading } from '../_components/ui/heading'
+import { Header } from '../../_components/header'
+import { Heading } from '../../_components/ui/heading'
 import Link from 'next/link'
-import { getPosts } from '../data/posts'
+import { getPosts } from '../../data/posts'
 
 export default async function BlogPage() {
   const posts = await getPosts()
