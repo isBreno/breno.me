@@ -5,9 +5,10 @@ import { SiGithub as Github, SiLinkedin } from '@icons-pack/react-simple-icons'
 import { Menu, Moon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from './ui/sheet'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import useIsMobile from '@/hooks/useIsMobile'
 
 const iconClass = 'w-5 h-5 text-foreground'
 
@@ -16,12 +17,12 @@ const navLinks = [
   { content:  "Projetos", icon: Projector, href: '/projects' },
   { content:  "Blog", icon: Notebook, href: '/blog' },
   {
-    content: "",
+    content: "Github",
     icon: Github,
     href: 'https://github.com/isBreno',
   },
   {
-    content: "",
+    content: "LinkedIn",
     icon: SiLinkedin,
     href: 'https://linkedin.com/in/brenovs',
   },
@@ -29,6 +30,7 @@ const navLinks = [
 
 export const Header = () => {
   const pathname = usePathname()
+  const isMobile = useIsMobile()
 
   return (
       <header className="py-3 px-3 w-full">
@@ -37,12 +39,21 @@ export const Header = () => {
             <Command />
           </Link>
 
-          <ul className="flex gap-3 items-center">
+
+          {isMobile ? (
+          <Sheet >
+  <SheetTrigger>
+              <Menu size={18} />
+            </SheetTrigger>
+  <SheetContent className="w-full py-10">
+    <SheetHeader>
+      <SheetDescription>
+          <ul className="flex flex-col items-start">
             {navLinks.map(({ icon: Icon, href, content }) => (
       
-            <li>
+            <li className="w-full ">
               <Link
-                className="flex gap-1 items-center text-sm text-muted hover:text-foreground transition-colors font-medium"
+                className={cn("flex py-2 rounded transition-colors hover:bg-accent/40 w-full gap-1 items-center justify-center text-sm text-muted hover:text-foreground transition-colors font-medium", pathname === href ? "text-highlight" : "")}
                 href={href}
               >
                 <Icon size={14} />
@@ -51,6 +62,27 @@ export const Header = () => {
             </li>
             ))}
           </ul>
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+          ) : (
+
+          <ul className="flex gap-3 items-center">
+            {navLinks.map(({ icon: Icon, href, content }) => (
+      
+            <li>
+              <Link
+                className={cn("flex gap-1 items-center text-sm text-muted hover:text-foreground transition-colors font-medium", pathname === href ? "text-highlight" : "")}
+                href={href}
+              >
+                <Icon size={14} />
+                {content}
+              </Link>
+            </li>
+            ))}
+          </ul>
+          )}
         </nav>
       </header>
 
