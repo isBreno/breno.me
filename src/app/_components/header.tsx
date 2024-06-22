@@ -1,5 +1,6 @@
 'use client'
 
+import { Command, NotepadText, Notebook, Projector } from 'lucide-react'
 import { SiGithub as Github, SiLinkedin } from '@icons-pack/react-simple-icons'
 import { Menu, Moon } from 'lucide-react'
 import Image from 'next/image'
@@ -11,15 +12,17 @@ import { cn } from '@/lib/utils'
 const iconClass = 'w-5 h-5 text-foreground'
 
 const navLinks = [
-  { content: 'About', href: '/' },
-  { content: 'Projects', href: '/projects' },
-  { content: 'Blog', href: '/blog' },
+  { content: "Sobre", icon: NotepadText, href: '/' },
+  { content:  "Projetos", icon: Projector, href: '/projects' },
+  { content:  "Blog", icon: Notebook, href: '/blog' },
   {
-    content: <Github className={iconClass} />,
+    content: "",
+    icon: Github,
     href: 'https://github.com/isBreno',
   },
   {
-    content: <SiLinkedin className={iconClass} />,
+    content: "",
+    icon: SiLinkedin,
     href: 'https://linkedin.com/in/brenovs',
   },
 ]
@@ -28,57 +31,28 @@ export const Header = () => {
   const pathname = usePathname()
 
   return (
-    <header className="w-full flex  justify-between items-center my-10">
-      <Link href="/">
-        <Image src={'/logo.svg'} alt="logo" width={115} height={115} />
-      </Link>
+      <header className="py-3 px-3 w-full">
+        <nav className="flex justify-between max-w-4xl mx-auto gap-3 items-center">
+          <Link href="/">
+            <Command />
+          </Link>
 
-      <nav>
-        <ul className="hidden sm:flex space-x-4 items-center">
-          {navLinks.map((link) => (
-            <li key={link.href}>
+          <ul className="flex gap-3 items-center">
+            {navLinks.map(({ icon: Icon, href, content }) => (
+      
+            <li>
               <Link
-                href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : '_self'}
-                className={cn(
-                  'text-foreground hover:text-highlight transition-colors',
-                  pathname === link.href ? 'text-highlight' : '',
-                )}
+                className="flex gap-1 items-center text-sm text-muted hover:text-foreground transition-colors font-medium"
+                href={href}
               >
-                {link.content}
+                <Icon size={14} />
+                {content}
               </Link>
             </li>
-          ))}
-          <Moon className={iconClass} />
-        </ul>
+            ))}
+          </ul>
+        </nav>
+      </header>
 
-        <Sheet>
-          <SheetTrigger className="sm:hidden aspect-square px-1 hover:bg-accent transition-colors rounded">
-            <Menu className={iconClass} />
-          </SheetTrigger>
-
-          <SheetContent className="w-full sm:hidden">
-            <ul className="w-full my-4">
-              {navLinks.map((link) => (
-                <li key={link.href} className="w-full">
-                  <Link
-                    href={link.href}
-                    target={link.href.startsWith('http') ? '_blank' : '_self'}
-                    className="text-foreground hover:bg-accent py-2 px-1 rounded text-center flex items-center justify-center transition-colors w-full"
-                  >
-                    {link.content}
-                  </Link>
-                </li>
-              ))}
-              <li className="w-full flex items-center justify-center">
-                <button className="text-foreground hover:bg-accent py-2 px-1 rounded text-center flex items-center justify-center transition-colors w-full">
-                  <Moon className={iconClass} />
-                </button>
-              </li>
-            </ul>
-          </SheetContent>
-        </Sheet>
-      </nav>
-    </header>
   )
 }

@@ -10,29 +10,6 @@ const config = {
   ],
   prefix: '',
   theme: {
-<<<<<<< HEAD
-    colors: {
-      background: "var(--background)",
-      foreground: "var(--foreground)",
-      primary: "var(--primary)",
-      secondary: "var(--secondary)",
-      accent: "var(--accent)",
-      neutral: "var(--neutral)",
-      "base-100": "var(--base-100)",
-      info: "var(--info)",
-      success: "var(--success)",
-      warning: "var(--warning)",
-      error: "var(--error)",
-      muted: "var(--muted)",
-=======
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
->>>>>>> 351d5497819b1cf61a92f204b563b05e94a516df
-    },
     colors: {
       background: 'hsl(var(--background))',
       foreground: 'hsl(var(--foreground))',
